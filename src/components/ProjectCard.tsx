@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Github, ExternalLink, Calendar } from 'lucide-react';
+import { GitBranch, ExternalLink, Calendar } from 'lucide-react';
 import { Project } from '@/data/portfolioData';
 
 export default function ProjectCard({ project }: { project: Project }) {
@@ -67,7 +67,7 @@ export default function ProjectCard({ project }: { project: Project }) {
               className="p-1.5 rounded-md text-slate-400 hover:text-white hover:bg-slate-800 transition-colors"
               title="View Source Code"
             >
-              <Github className="w-4 h-4" />
+              <GitBranch className="w-4 h-4" />
             </a>
           )}
           {project.devpostUrl && (

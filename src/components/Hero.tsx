@@ -2,8 +2,8 @@
 
 import { motion } from 'framer-motion';
 import {
-  Github,
-  Linkedin,
+  GitBranch,
+  BriefcaseBusiness,
   Mail,
   FileText,
   GraduationCap,
@@ -105,7 +105,7 @@ export default function Hero() {
               aria-label="GitHub Profile"
               className="p-2.5 rounded-lg bg-slate-900/80 border border-slate-800 text-slate-400 hover:text-white hover:border-slate-700 transition-colors"
             >
-              <Github className="w-5 h-5" />
+              <GitBranch className="w-5 h-5" />
             </a>
             <a
               href={contactInfo.linkedin}
@@ -114,7 +114,7 @@ export default function Hero() {
               aria-label="LinkedIn Profile"
               className="p-2.5 rounded-lg bg-slate-900/80 border border-slate-800 text-slate-400 hover:text-white hover:border-slate-700 transition-colors"
             >
-              <Linkedin className="w-5 h-5" />
+              <BriefcaseBusiness className="w-5 h-5" />
             </a>
             <a
               href={contactInfo.devpost}

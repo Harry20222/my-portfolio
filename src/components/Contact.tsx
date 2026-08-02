@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Mail, Linkedin, Github, Send, CheckCircle2, MapPin } from 'lucide-react';
+import { Mail, BriefcaseBusiness, GitBranch, Send, CheckCircle2, MapPin } from 'lucide-react';
 import { contactInfo } from '@/data/portfolioData';
 
 export default function Contact() {
@@ -62,7 +62,7 @@ export default function Contact() {
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 text-slate-300 hover:text-cyan-400 transition-colors p-2 rounded-lg hover:bg-slate-800/50"
                 >
-                  <Linkedin className="w-5 h-5 text-cyan-400" />
+                  <BriefcaseBusiness className="w-5 h-5 text-cyan-400" />
                   <span>linkedin.com/in/harry-bosco-denis</span>
                 </a>
                 <a
@@ -71,7 +71,7 @@ export default function Contact() {
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 text-slate-300 hover:text-cyan-400 transition-colors p-2 rounded-lg hover:bg-slate-800/50"
                 >
-                  <Github className="w-5 h-5 text-cyan-400" />
+                  <GitBranch className="w-5 h-5 text-cyan-400" />
                   <span>github.com/Harry20222</span>
                 </a>
                 <div className="flex items-center gap-3 text-slate-400 p-2">

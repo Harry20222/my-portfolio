@@ -1,13 +1,10 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
 import './globals.css';
 
-const inter = Inter({ subsets: ['latin'] });
-
 export const metadata: Metadata = {
-  title: 'Harry Bosco Denis | CS Student & Software Developer',
+  title: 'Harry Bosco Denis | Personal Website',
   description:
-    'Portfolio of Harry Bosco Denis — Computer Science student at the University of Cincinnati specializing in AI/ML, Android development, and full-stack systems.',
+    'Personal Website of Harry Bosco Denis — Computer Science Student & Software Developer at the University of Cincinnati.',
   keywords: [
     'Harry Bosco Denis',
     'Computer Science',
@@ -15,7 +12,7 @@ export const metadata: Metadata = {
     'Software Engineer',
     'Python',
     'TensorFlow',
-    'FastAPI',
+    'React',
   ],
 };
 
@@ -25,10 +22,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="scroll-smooth dark">
-      <body
-        className={`${inter.className} bg-slate-950 text-slate-100 antialiased selection:bg-cyan-500 selection:text-slate-950`}
-      >
+    <html lang="en" className="scroll-smooth">
+      <body className="bg-white text-[#2f2f2f] antialiased">
         {children}
       </body>
     </html>

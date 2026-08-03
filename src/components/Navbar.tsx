@@ -2,13 +2,16 @@
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Code2 } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
+import { personalBio } from '@/data/portfolioData';
 
 const navLinks = [
+  { name: 'Home', href: '#hero' },
   { name: 'About', href: '#about' },
-  { name: 'Projects', href: '#projects' },
+  { name: 'Education', href: '#education' },
   { name: 'Experience', href: '#experience' },
-  { name: 'Skills', href: '#skills' },
+  { name: 'Projects', href: '#projects' },
+  { name: 'Extracurriculars', href: '#extracurriculars' },
   { name: 'Contact', href: '#contact' },
 ];
 
@@ -28,47 +31,41 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-slate-950/80 backdrop-blur-md border-b border-slate-800/80 py-3 shadow-lg shadow-black/20'
-          : 'bg-transparent py-5'
+          ? 'bg-white/95 backdrop-blur-md border-b border-neutral-200 py-3 shadow-sm'
+          : 'bg-transparent py-4'
       }`}
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between">
         <a
-          href="#about"
-          className="flex items-center gap-2 group text-lg font-bold tracking-tight text-white focus:outline-none focus:ring-2 focus:ring-cyan-400 rounded-md p-1"
+          href="#hero"
+          className="font-mono text-base font-bold tracking-tight text-neutral-900 hover:text-neutral-600 transition-colors"
         >
-          <div className="p-1.5 rounded-lg bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 group-hover:bg-cyan-500/20 transition-colors">
-            <Code2 className="w-5 h-5" />
-          </div>
-          <span>
-            Harry<span className="text-cyan-400">.dev</span>
-          </span>
+          {personalBio.name}
         </a>
 
-        <nav className="hidden md:flex items-center gap-1 bg-slate-900/60 p-1.5 rounded-full border border-slate-800/80 backdrop-blur-sm">
+        <nav className="hidden md:flex items-center gap-6">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
-              className="px-4 py-1.5 text-sm text-slate-300 hover:text-white hover:bg-slate-800/70 rounded-full transition-all duration-200"
+              className="font-mono text-xs uppercase tracking-wider text-neutral-600 hover:text-neutral-900 transition-colors"
             >
               {link.name}
             </a>
           ))}
-        </nav>
-
-        <div className="hidden md:block">
           <a
-            href="#contact"
-            className="px-4 py-2 text-sm font-medium text-slate-950 bg-cyan-400 hover:bg-cyan-300 rounded-lg transition-colors duration-200 shadow-sm shadow-cyan-500/20"
+            href={personalBio.resumeUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-mono text-xs uppercase tracking-wider px-3 py-1.5 border border-neutral-800 text-neutral-800 hover:bg-neutral-800 hover:text-white transition-colors rounded-sm"
           >
-            Let's Connect
+            Resume
           </a>
-        </div>
+        </nav>
 
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="md:hidden p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-900 focus:outline-none focus:ring-2 focus:ring-cyan-400"
+          className="md:hidden p-2 text-neutral-700 hover:text-neutral-900 focus:outline-none"
           aria-label="Toggle Navigation Menu"
         >
           {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -81,7 +78,7 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-slate-950/95 border-b border-slate-800 backdrop-blur-xl px-4 py-6"
+            className="md:hidden bg-white border-b border-neutral-200 px-4 py-4 shadow-lg"
           >
             <div className="flex flex-col gap-3">
               {navLinks.map((link) => (
@@ -89,17 +86,19 @@ export default function Navbar() {
                   key={link.name}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="px-4 py-2 text-base text-slate-300 hover:text-cyan-400 hover:bg-slate-900/50 rounded-lg transition-colors"
+                  className="font-mono text-xs uppercase tracking-wider text-neutral-700 hover:text-neutral-900 py-1"
                 >
                   {link.name}
                 </a>
               ))}
               <a
-                href="#contact"
+                href={personalBio.resumeUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={() => setMobileMenuOpen(false)}
-                className="mt-2 text-center px-4 py-2.5 text-sm font-medium text-slate-950 bg-cyan-400 hover:bg-cyan-300 rounded-lg transition-colors"
+                className="font-mono text-xs uppercase tracking-wider text-center py-2 border border-neutral-800 text-neutral-800 hover:bg-neutral-800 hover:text-white transition-colors rounded-sm mt-2"
               >
-                Let's Connect
+                Resume
               </a>
             </div>
           </motion.div>

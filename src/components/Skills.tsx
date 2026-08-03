@@ -5,39 +5,36 @@ import { skillCategories } from '@/data/portfolioData';
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-20 relative scroll-mt-24">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-3">
-            Technical <span className="text-cyan-400">Skills</span>
+    <section id="skills" className="py-20 bg-[#f0f6ff] border-b border-neutral-200">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6">
+        <div className="mb-12">
+          <h2 className="font-mono text-3xl sm:text-4xl font-bold text-neutral-900 tracking-tight mb-2">
+            Technical Skills & Toolkit
           </h2>
-          <p className="text-slate-400 text-sm sm:text-base">
-            Languages, developer tools, and frameworks in my software toolkit.
-          </p>
+          <div className="w-16 h-0.5 bg-neutral-800" />
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {skillCategories.map((cat, idx) => (
             <motion.div
               key={idx}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: idx * 0.1 }}
-              className="p-6 rounded-2xl bg-slate-900/60 border border-slate-800/80 backdrop-blur-sm"
+              className="bg-white border border-neutral-200 rounded-lg p-6 shadow-sm"
             >
-              <h3 className="text-base font-bold text-white mb-4 flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-cyan-400" />
+              <h3 className="font-mono text-lg font-bold text-neutral-900 mb-4 pb-2 border-b border-neutral-100">
                 {cat.category}
               </h3>
               <div className="flex flex-wrap gap-2">
                 {cat.skills.map((skill) => (
                   <span
                     key={skill.name}
-                    className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors ${
+                    className={`font-mono text-xs px-3 py-1.5 rounded-full border transition-colors ${
                       skill.highlight
-                        ? 'bg-cyan-500/10 text-cyan-300 border border-cyan-500/30'
-                        : 'bg-slate-950/80 text-slate-300 border border-slate-800/80'
+                        ? 'border-neutral-800 bg-neutral-800 text-white font-semibold'
+                        : 'border-neutral-300 bg-neutral-50 text-neutral-800'
                     }`}
                   >
                     {skill.name}

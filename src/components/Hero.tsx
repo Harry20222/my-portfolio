@@ -44,7 +44,7 @@ export default function Hero() {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="text-4xl sm:text-6xl font-extrabold tracking-tight text-white mb-4 leading-tight"
         >
-          Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-indigo-400">{personalBio.name}</span>.
+          Hi, I'm <span className="text-white">{personalBio.name}</span>.
         </motion.h1>
 
         <motion.p

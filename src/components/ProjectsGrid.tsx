@@ -5,7 +5,7 @@ import { projectsData } from '@/data/portfolioData';
 
 export default function ProjectsGrid() {
   return (
-    <section id="projects" className="py-20 relative">
+    <section id="projects" className="py-24 relative scroll-mt-24">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-3">
@@ -16,7 +16,8 @@ export default function ProjectsGrid() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {/* Relaxed grid spacing to ensure hover transforms do not overlap adjacent cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
           {projectsData.map((project, index) => (
             <ProjectCard key={index} project={project} />
           ))}

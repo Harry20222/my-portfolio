@@ -160,7 +160,7 @@ export const projectsData: Project[] = [
     title: "Educational Shorts Platform",
     subtitle: "MAKE UC Hackathon Backend & Data Pipeline",
     timeframe: "Nov. 2025",
-    tags: ["Hackathon Winner", "Backend Systems", "Data Scraper"],
+    tags: ["Data Pipeline", "Backend Systems", "Data Scraper"],
     techStack: ["Python", "FastAPI", "Gemini AI", "YouTube Data API"],
     bullets: [
       "Architected the backend for a video platform at the MAKE UC Hackathon, designed to deliver educational short-form computer science content.",

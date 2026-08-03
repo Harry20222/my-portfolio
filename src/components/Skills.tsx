@@ -5,7 +5,7 @@ import { skillCategories } from '@/data/portfolioData';
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-20 relative">
+    <section id="skills" className="py-20 relative scroll-mt-24">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-3">
@@ -24,9 +24,9 @@ export default function Skills() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: idx * 0.1 }}
-              className="p-6 rounded-2xl bg-slate-900/60 border border-slate-800/80"
+              className="p-6 rounded-2xl bg-slate-900/60 border border-slate-800/80 backdrop-blur-sm"
             >
-              <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
+              <h3 className="text-base font-bold text-white mb-4 flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-cyan-400" />
                 {cat.category}
               </h3>
@@ -37,7 +37,7 @@ export default function Skills() {
                     className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors ${
                       skill.highlight
                         ? 'bg-cyan-500/10 text-cyan-300 border border-cyan-500/30'
-                        : 'bg-slate-800/80 text-slate-300 border border-slate-700/50'
+                        : 'bg-slate-950/80 text-slate-300 border border-slate-800/80'
                     }`}
                   >
                     {skill.name}

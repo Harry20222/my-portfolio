@@ -142,7 +142,7 @@ export default function Activities() {
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-1 font-mono text-xs text-neutral-900 hover:text-neutral-600 underline font-semibold transition-colors"
                       >
-                        <span>View the open-source project my work was added to here.</span>
+                        <span>{exp.projectUrlLabel || 'View project'}</span>
                         <ExternalLink className="w-3 h-3" />
                       </a>
                     </div>

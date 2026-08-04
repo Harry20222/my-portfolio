@@ -6,11 +6,13 @@ import { contactInfo } from '@/data/portfolioData';
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState(false);
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
+    setSubmitError(false);
 
     const form = e.currentTarget;
     try {
@@ -19,14 +21,18 @@ export default function Contact() {
         body: new FormData(form),
         headers: { Accept: 'application/json' },
       });
+
       if (response.ok) {
         setSubmitted(true);
+        setSubmitError(false);
         form.reset();
       } else {
-        setSubmitted(true);
+        setSubmitted(false);
+        setSubmitError(true);
       }
     } catch {
-      setSubmitted(true);
+      setSubmitted(false);
+      setSubmitError(true);
     } finally {
       setLoading(false);
     }
@@ -59,6 +65,13 @@ export default function Contact() {
                 >
                   <Mail className="w-4 h-4 text-neutral-800" />
                   <span>{contactInfo.email}</span>
+                </a>
+                <a
+                  href={`tel:${contactInfo.phone}`}
+                  className="flex items-center gap-3 text-neutral-700 hover:text-neutral-900 transition-colors"
+                >
+                  <span className="font-mono text-xs uppercase tracking-wider text-neutral-500">Phone:</span>
+                  <span>{contactInfo.phone}</span>
                 </a>
                 <a
                   href={contactInfo.linkedin}
@@ -100,6 +113,22 @@ export default function Contact() {
                   className="font-mono text-xs uppercase tracking-wider mt-4 px-4 py-2 border border-neutral-800 text-neutral-800 hover:bg-neutral-800 hover:text-white transition-colors rounded-sm"
                 >
                   Send another message
+                </button>
+              </div>
+            ) : submitError ? (
+              <div className="text-center py-12 space-y-3">
+                <div className="w-12 h-12 rounded-full bg-rose-100 text-rose-600 mx-auto flex items-center justify-center font-mono text-lg font-bold">
+                  !
+                </div>
+                <h3 className="font-mono text-xl font-bold text-neutral-900">Something went wrong</h3>
+                <p className="font-serif text-sm text-neutral-600">
+                  The form couldn't be submitted right now. Please try again or reach out directly by email.
+                </p>
+                <button
+                  onClick={() => setSubmitError(false)}
+                  className="font-mono text-xs uppercase tracking-wider mt-4 px-4 py-2 border border-neutral-800 text-neutral-800 hover:bg-neutral-800 hover:text-white transition-colors rounded-sm"
+                >
+                  Try again
                 </button>
               </div>
             ) : (

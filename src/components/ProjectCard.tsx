@@ -5,32 +5,42 @@ import { ExternalLink, FileText, Activity, Video, Database, Code2 } from 'lucide
 import { Project } from '@/data/portfolioData';
 
 export default function ProjectCard({ project }: { project: Project }) {
-  const targetUrl = project.githubUrl || project.devpostUrl || project.demoUrl || '#';
+  const targetUrl = project.demoUrl || project.devpostUrl || project.githubUrl || '#';
+  const linkLabel = project.demoUrl
+    ? 'View demo'
+    : project.devpostUrl
+      ? 'View Devpost'
+      : project.githubUrl
+        ? 'View repository'
+        : 'Learn more';
 
   const renderIcon = () => {
     switch (project.iconName) {
       case 'FileText':
-        return <FileText className="w-6 h-6 text-white group-hover:text-neutral-900 transition-colors mb-3" />;
+        return <FileText className="w-6 h-6 text-neutral-900 mb-3" />;
       case 'Activity':
-        return <Activity className="w-6 h-6 text-white group-hover:text-neutral-900 transition-colors mb-3" />;
+        return <Activity className="w-6 h-6 text-neutral-900 mb-3" />;
       case 'Video':
-        return <Video className="w-6 h-6 text-white group-hover:text-neutral-900 transition-colors mb-3" />;
+        return <Video className="w-6 h-6 text-neutral-900 mb-3" />;
       case 'Database':
-        return <Database className="w-6 h-6 text-white group-hover:text-neutral-900 transition-colors mb-3" />;
+        return <Database className="w-6 h-6 text-neutral-900 mb-3" />;
       default:
-        return <Code2 className="w-6 h-6 text-white group-hover:text-neutral-900 transition-colors mb-3" />;
+        return <Code2 className="w-6 h-6 text-neutral-900 mb-3" />;
     }
   };
 
   return (
-    <motion.div
+    <motion.a
+      href={targetUrl}
+      target="_blank"
+      rel="noopener noreferrer"
       whileHover={{ y: -4 }}
       transition={{ duration: 0.2 }}
-      className="group bg-white border border-neutral-200 rounded-lg p-6 shadow-sm transition-all duration-300 flex flex-col justify-between"
+      className="group block bg-white/90 border border-slate-200 rounded-[2rem] p-6 shadow-[0_12px_35px_-18px_rgba(15,23,42,0.35)] transition-all duration-300 flex flex-col justify-between h-full hover:border-blue-200 hover:shadow-[0_18px_45px_-20px_rgba(29,78,216,0.38)]"
     >
       <div>
         <div className="flex items-center justify-between mb-2">
-          {renderIcon()}
+          <div className="rounded-xl bg-blue-50 p-2.5">{renderIcon()}</div>
           <span className="font-mono text-[11px] text-neutral-500 uppercase tracking-wider">
             {project.timeframe}
           </span>
@@ -61,27 +71,20 @@ export default function ProjectCard({ project }: { project: Project }) {
       </div>
 
       <div className="pt-4 border-t border-neutral-200 flex flex-wrap items-center justify-between gap-2">
-        <div className="flex flex-wrap gap-1.5">
-          {project.techStack.map((tech) => (
-            <span
-              key={tech}
-              className="font-mono text-[10px] uppercase border border-neutral-300 text-neutral-900 px-2.5 py-0.5 rounded-full transition-colors"
-            >
-              {tech}
+        <div className="flex flex-wrap items-center gap-1.5 font-mono text-[10px] uppercase tracking-wide text-slate-600">
+          {project.techStack.map((tech, idx) => (
+            <span key={tech} className="inline-flex items-center gap-1.5">
+              {idx > 0 && <span className="text-slate-400">-</span>}
+              <span>{tech}</span>
             </span>
           ))}
         </div>
 
-        <a
-          href={targetUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center gap-1 font-mono text-[11px] text-neutral-900 hover:text-neutral-600 transition-colors"
-        >
-          <span>Learn more</span>
+        <span className="flex items-center gap-1 font-mono text-[11px] text-neutral-900 group-hover:text-neutral-600 transition-colors">
+          <span>{linkLabel}</span>
           <ExternalLink className="w-3 h-3" />
-        </a>
+        </span>
       </div>
-    </motion.div>
+    </motion.a>
   );
 }

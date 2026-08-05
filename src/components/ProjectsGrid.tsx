@@ -1,4 +1,4 @@
-'use client';
+// ProjectsGrid.tsx
 
 import ProjectCard from './ProjectCard';
 import { projectsData } from '@/data/portfolioData';
@@ -17,10 +17,14 @@ export default function ProjectsGrid() {
           <div className="w-16 h-0.5 bg-neutral-800 mt-3 mx-auto sm:mx-0" />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Replaced CSS Grid with a explicit flex/wrap gap layout */}
+        <div className="flex flex-wrap -mx-4">
           {projectsData.map((project, index) => (
-            <ProjectCard key={index} project={project} />
+            <div key={index} className="w-full md:w-1/2 lg:w-1/3 px-4">
+              <ProjectCard project={project} />
+            </div>
           ))}
+          <div className="flex flex-col gap-y-8"></div>
         </div>
       </div>
     </section>

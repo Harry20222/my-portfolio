@@ -10,7 +10,6 @@ export interface PersonalBio {
   university: string;
   year: string;
   major: string;
-  hometown: string;
   coopAvailability: string;
   gpa: number;
   bioParagraph1: string;
@@ -86,7 +85,6 @@ export const personalBio: PersonalBio = {
   university: "University of Cincinnati",
   year: "Sophomore (Class of 2029)",
   major: "Computer Science",
-  hometown: "Cincinnati, OH",
   coopAvailability: "Spring 2027",
   gpa: 3.93,
   bioParagraph1:

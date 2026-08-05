@@ -5,15 +5,6 @@ import { ExternalLink, FileText, Activity, Video, Database, Code2 } from 'lucide
 import { Project } from '@/data/portfolioData';
 
 export default function ProjectCard({ project }: { project: Project }) {
-  const targetUrl = project.demoUrl || project.devpostUrl || project.githubUrl || '#';
-  const linkLabel = project.demoUrl
-    ? 'View demo'
-    : project.devpostUrl
-      ? 'View Devpost'
-      : project.githubUrl
-        ? 'View repository'
-        : 'Learn more';
-
   const renderIcon = () => {
     switch (project.iconName) {
       case 'FileText':
@@ -30,15 +21,13 @@ export default function ProjectCard({ project }: { project: Project }) {
   };
 
   return (
-    <motion.a
-      href={targetUrl}
-      target="_blank"
-      rel="noopener noreferrer"
+    <motion.article
       whileHover={{ y: -4 }}
       transition={{ duration: 0.2 }}
-      className="group block bg-white/90 border border-slate-200 rounded-[2rem] p-6 shadow-[0_12px_35px_-18px_rgba(15,23,42,0.35)] transition-all duration-300 flex flex-col justify-between h-full hover:border-blue-200 hover:shadow-[0_18px_45px_-20px_rgba(29,78,216,0.38)]"
+      className="group bg-white/90 border border-slate-200 rounded-[2rem] p-6 shadow-[0_12px_35px_-18px_rgba(15,23,42,0.35)] transition-all duration-300 flex flex-col justify-between h-full hover:border-blue-200 hover:shadow-[0_18px_45px_-20px_rgba(29,78,216,0.38)]"
     >
       <div>
+        <br />
         <div className="flex items-center justify-between mb-2">
           <div className="rounded-xl bg-blue-50 p-2.5">{renderIcon()}</div>
           <span className="font-mono text-[11px] text-neutral-500 uppercase tracking-wider">
@@ -69,22 +58,43 @@ export default function ProjectCard({ project }: { project: Project }) {
           ))}
         </ul>
       </div>
-
-      <div className="pt-4 border-t border-neutral-200 flex flex-wrap items-center justify-between gap-2">
-        <div className="flex flex-wrap items-center gap-1.5 font-mono text-[10px] uppercase tracking-wide text-slate-600">
+      <div className="border-t flex justify-between gap-4 pt-4">
+        <div className="flex font-mono text-[10px] uppercase">
+          <span>{"\u00A0\u00A0\u00A0\u00A0"}</span>
           {project.techStack.map((tech, idx) => (
-            <span key={tech} className="inline-flex items-center gap-1.5">
+            <span key={tech} className="inline-flex items-center">
               {idx > 0 && <span className="text-slate-400">-</span>}
               <span>{tech}</span>
             </span>
           ))}
         </div>
 
-        <span className="flex items-center gap-1 font-mono text-[11px] text-neutral-900 group-hover:text-neutral-600 transition-colors">
-          <span>{linkLabel}</span>
-          <ExternalLink className="w-3 h-3" />
-        </span>
+        <div className="flex items-center gap-3 text-[11px] font-mono">
+          {project.githubUrl && (
+            <a
+              href={project.githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 text-neutral-900 hover:text-neutral-600 transition-colors"
+            >
+              <span>View repository</span>
+              <ExternalLink className="w-3 h-3" />
+            </a>
+          )}
+
+          {project.devpostUrl && (
+            <a
+              href={project.devpostUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 text-neutral-900 hover:text-neutral-600 transition-colors"
+            >
+              <span>View Devpost</span>
+              <ExternalLink className="w-3 h-3" />
+            </a>
+          )}
+        </div>
       </div>
-    </motion.a>
+    </motion.article>
   );
 }

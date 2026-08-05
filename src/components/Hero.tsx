@@ -51,7 +51,7 @@ export default function Hero() {
           </a>
         </motion.div>
       </div>
-
+      <br />
       {/* Main Bio & Quick Info Card Section */}
       <div id="about" className="max-w-5xl mx-auto px-4 sm:px-6 pt-12 pb-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
@@ -72,10 +72,6 @@ export default function Hero() {
                 <dd className="font-semibold text-neutral-900">{personalBio.name}</dd>
               </div>
               <div>
-                <dt className="font-mono text-xs text-neutral-500 uppercase">Pronouns:</dt>
-                <dd className="text-neutral-800">{personalBio.pronouns}</dd>
-              </div>
-              <div>
                 <dt className="font-mono text-xs text-neutral-500 uppercase">School:</dt>
                 <dd className="text-neutral-800">{personalBio.university}</dd>
               </div>
@@ -88,10 +84,6 @@ export default function Hero() {
                 <dd className="text-neutral-800">{personalBio.major}</dd>
               </div>
               <div>
-                <dt className="font-mono text-xs text-neutral-500 uppercase">Hometown:</dt>
-                <dd className="text-neutral-800">{personalBio.hometown}</dd>
-              </div>
-              <div>
                 <dt className="font-mono text-xs text-neutral-500 uppercase">GPA:</dt>
                 <dd className="text-neutral-800 font-mono text-xs font-bold">{personalBio.gpa.toFixed(2)} / 4.00</dd>
               </div>
@@ -99,6 +91,7 @@ export default function Hero() {
           </motion.div>
 
           {/* Main Intro Paragraphs & Resume Button (Right Column) */}
+
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -155,9 +148,12 @@ export default function Hero() {
                   className="p-2.5 border border-neutral-300 text-neutral-700 hover:text-neutral-900 hover:border-neutral-800 transition-colors rounded-sm"
                 >
                   <Mail className="w-4 h-4" />
+                
                 </a>
+
               </div>
             </div>
+            <br />
           </motion.div>
         </div>
       </div>

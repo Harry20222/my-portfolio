@@ -11,8 +11,9 @@ export default function Home() {
     <main className="min-h-screen bg-white text-[#2f2f2f] selection:bg-neutral-800 selection:text-white">
       <Navbar />
       <Hero />
-      <Activities />
-      <ProjectsGrid />
+      <Activities>
+        <ProjectsGrid />
+      </Activities>
       <Skills />
       <Contact />
       <Footer />

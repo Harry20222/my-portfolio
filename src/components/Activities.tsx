@@ -1,10 +1,10 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Award, Briefcase, GraduationCap, Users, Code, Compass, ExternalLink } from 'lucide-react';
-import { educationList, experienceList, extracurricularsList } from '@/data/portfolioData';
+import { GraduationCap, Users, Code, Compass, ExternalLink } from 'lucide-react';
+import { educationList, extracurricularsList } from '@/data/portfolioData';
 
-export default function Activities() {
+export default function Activities({ children }: { children: React.ReactNode }) {
   return (
     <div>
       {/* SECTION 1: MY EDUCATION */}
@@ -88,71 +88,8 @@ export default function Activities() {
         </div>
       </section>
 
-      {/* SECTION 2: MY EXPERIENCE */}
-      <section id="experience" className="py-20 bg-white border-b border-neutral-200">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6">
-          <div className="mb-12">
-            <h2 className="font-mono text-3xl sm:text-4xl font-bold text-neutral-900 tracking-tight mb-2">
-              My Experience
-            </h2>
-            <div className="w-16 h-0.5 bg-neutral-800" />
-          </div>
-
-          <div className="relative border-l-2 border-neutral-300 ml-3 sm:ml-6 pl-6 sm:pl-10 space-y-8">
-            {experienceList.map((exp, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: idx * 0.1 }}
-                className="relative"
-              >
-                {/* Timeline node circle */}
-                <div className="absolute -left-[31px] sm:-left-[47px] top-1.5 w-3.5 h-3.5 rounded-full bg-neutral-800 border-2 border-white shadow-sm" />
-
-                <div className="bg-white border border-neutral-200 rounded-lg p-6 sm:p-8 shadow-sm">
-                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-1">
-                    <h3 className="font-mono text-xl font-bold text-neutral-900">
-                      {exp.company}
-                    </h3>
-                    <span className="font-mono text-xs text-neutral-500 uppercase tracking-wider">
-                      {exp.period}
-                    </span>
-                  </div>
-
-                  <p className="font-serif text-sm font-semibold text-neutral-700 mb-3">
-                    {exp.title} {exp.location && `| ${exp.location}`}
-                  </p>
-
-                  <ul className="space-y-2 text-sm font-serif text-neutral-700 leading-relaxed mb-4">
-                    {exp.bullets.map((bullet, bIdx) => (
-                      <li key={bIdx} className="flex items-start gap-2">
-                        <span className="font-mono text-neutral-400 mt-0.5">•</span>
-                        <span>{bullet}</span>
-                      </li>
-                    ))}
-                  </ul>
-
-                  {exp.projectUrl && (
-                    <div className="pt-2 border-t border-neutral-100">
-                      <a
-                        href={exp.projectUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 font-mono text-xs text-neutral-900 hover:text-neutral-600 underline font-semibold transition-colors"
-                      >
-                        <span>{exp.projectUrlLabel || 'View project'}</span>
-                        <ExternalLink className="w-3 h-3" />
-                      </a>
-                    </div>
-                  )}
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* SECTION 2: PROJECTS */}
+      {children}
 
       {/* SECTION 3: MY EXTRACURRICULARS */}
       <section id="extracurriculars" className="py-20 bg-white border-b border-neutral-200">
@@ -202,12 +139,16 @@ export default function Activities() {
                     </div>
 
                     <p className="font-serif text-sm font-semibold text-neutral-700">
-                      {item.role} | {item.organization}
+                      {item.role !== item.title && `${item.role} | `}
+                      {item.organization}
+                      {item.location && ` | ${item.location}`}
                     </p>
 
-                    <p className="font-serif text-sm text-neutral-600 leading-relaxed">
-                      {item.description}
-                    </p>
+                    {item.description && (
+                      <p className="font-serif text-sm text-neutral-600 leading-relaxed">
+                        {item.description}
+                      </p>
+                    )}
 
                     <ul className="space-y-1 font-serif text-xs text-neutral-600">
                       {item.bullets.map((b, bIdx) => (
@@ -217,6 +158,18 @@ export default function Activities() {
                         </li>
                       ))}
                     </ul>
+
+                    {item.projectUrl && (
+                      <a
+                        href={item.projectUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1 font-mono text-xs text-neutral-900 hover:text-neutral-600 underline font-semibold transition-colors"
+                      >
+                        <span>{item.projectUrlLabel || 'View project'}</span>
+                        <ExternalLink className="w-3 h-3" />
+                      </a>
+                    )}
                   </div>
                 </motion.div>
               );

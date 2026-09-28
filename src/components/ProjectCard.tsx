@@ -1,75 +1,59 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ExternalLink, FileText, Activity, Video, Database, Code2 } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 import { Project } from '@/data/portfolioData';
 
-export default function ProjectCard({ project }: { project: Project }) {
-  const renderIcon = () => {
-    switch (project.iconName) {
-      case 'FileText':
-        return <FileText className="w-6 h-6 text-neutral-900 mb-3" />;
-      case 'Activity':
-        return <Activity className="w-6 h-6 text-neutral-900 mb-3" />;
-      case 'Video':
-        return <Video className="w-6 h-6 text-neutral-900 mb-3" />;
-      case 'Database':
-        return <Database className="w-6 h-6 text-neutral-900 mb-3" />;
-      default:
-        return <Code2 className="w-6 h-6 text-neutral-900 mb-3" />;
-    }
-  };
-
+export default function ProjectCard({
+  project,
+  index,
+}: {
+  project: Project;
+  index: number;
+}) {
   return (
     <motion.article
-      whileHover={{ y: -4 }}
-      transition={{ duration: 0.2 }}
-      className="group bg-white/90 border border-slate-200 rounded-[2rem] p-6 shadow-[0_12px_35px_-18px_rgba(15,23,42,0.35)] transition-all duration-300 flex flex-col justify-between h-full hover:border-blue-200 hover:shadow-[0_18px_45px_-20px_rgba(29,78,216,0.38)]"
+      initial={{ opacity: 0, x: -20 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.4, delay: index * 0.1 }}
+      className="bg-white border border-neutral-200 rounded-lg p-6 sm:p-8 shadow-sm"
     >
-      <div>
-        <br />
-        <div className="flex items-center justify-between mb-2">
-          <div className="rounded-xl bg-blue-50 p-2.5">{renderIcon()}</div>
-          <span className="font-mono text-[11px] text-neutral-500 uppercase tracking-wider">
-            {project.timeframe}
-          </span>
-        </div>
-
-        <h3 className="font-mono text-xl font-bold text-neutral-900 mb-1">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-1">
+        <h3 className="font-mono text-xl font-bold text-neutral-900">
           {project.title}
         </h3>
+        <span className="font-mono text-xs text-neutral-500 uppercase tracking-wider">
+          {project.timeframe}
+        </span>
+      </div>
 
-        {project.subtitle && (
-          <p className="font-serif text-xs text-neutral-600 italic mb-3">
-            {project.subtitle}
-          </p>
-        )}
+      {project.subtitle && (
+        <p className="font-serif text-sm font-semibold text-neutral-700 mb-3">
+          {project.subtitle}
+        </p>
+      )}
 
-        <p className="font-serif text-xs text-neutral-700 leading-relaxed mb-4">
-          {project.description}
+      <p className="font-serif text-sm text-neutral-600 leading-relaxed mb-4">
+        {project.description}
+      </p>
+
+      <ul className="space-y-2 text-sm font-serif text-neutral-700 leading-relaxed mb-4">
+        {project.bullets.map((bullet, idx) => (
+          <li key={idx} className="flex items-start gap-2">
+            <span className="font-mono text-neutral-400 mt-0.5">•</span>
+            <span>{bullet}</span>
+          </li>
+        ))}
+      </ul>
+
+      <div className="border-t border-neutral-100 pt-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+        <p className="font-mono text-xs uppercase text-neutral-500">
+          <span className="font-semibold">Tech stack: </span>
+          {project.techStack.join(' · ')}
         </p>
 
-        <ul className="space-y-1 mb-6 font-serif text-xs text-neutral-700">
-          {project.bullets.map((bullet, idx) => (
-            <li key={idx} className="flex items-start gap-1.5">
-              <span className="font-mono text-neutral-400">•</span>
-              <span>{bullet}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
-      <div className="border-t flex justify-between gap-4 pt-4">
-        <div className="flex font-mono text-[10px] uppercase">
-          <span>{"\u00A0\u00A0\u00A0\u00A0"}</span>
-          {project.techStack.map((tech, idx) => (
-            <span key={tech} className="inline-flex items-center">
-              {idx > 0 && <span className="text-slate-400">-</span>}
-              <span>{tech}</span>
-            </span>
-          ))}
-        </div>
-
-        <div className="flex items-center gap-3 text-[11px] font-mono">
+        <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs font-mono">
           {project.githubUrl && (
             <a
               href={project.githubUrl}
@@ -90,6 +74,18 @@ export default function ProjectCard({ project }: { project: Project }) {
               className="inline-flex items-center gap-1 text-neutral-900 hover:text-neutral-600 transition-colors"
             >
               <span>View Devpost</span>
+              <ExternalLink className="w-3 h-3" />
+            </a>
+          )}
+
+          {project.demoUrl && (
+            <a
+              href={project.demoUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 text-neutral-900 hover:text-neutral-600 transition-colors"
+            >
+              <span>View demo</span>
               <ExternalLink className="w-3 h-3" />
             </a>
           )}

@@ -38,16 +38,6 @@ export interface Education {
   description?: string;
 }
 
-export interface ExperienceItem {
-  company: string;
-  title: string;
-  location: string;
-  period: string;
-  bullets: string[];
-  projectUrl?: string;
-  projectUrlLabel?: string;
-}
-
 export interface SkillCategory {
   category: string;
   skills: { name: string; highlight?: boolean }[];
@@ -71,11 +61,14 @@ export interface ExtracurricularItem {
   title: string;
   organization: string;
   role: string;
+  location?: string;
   period: string;
-  description: string;
+  description?: string;
   bullets: string[];
   imageUrl?: string;
   iconName?: string;
+  projectUrl?: string;
+  projectUrlLabel?: string;
 }
 
 export const personalBio: PersonalBio = {
@@ -128,61 +121,6 @@ export const educationList: Education[] = [
     ],
     description:
       "Pursuing a BS in Computer Science with a 3.93 cumulative GPA, engaged in software engineering coursework, competitive hackathons, and student leadership."
-  },
-  {
-    institution: "High School / Preparatory Academy",
-    degree: "High School Diploma",
-    period: "2021 - 2025",
-    major: "STEM Focus",
-    coursework: [
-      "AP Computer Science A",
-      "AP Calculus BC",
-      "AP Physics C",
-      "Advanced Mathematics"
-    ],
-    awardsAndScholarships: [
-      "High Honors",
-      "AP Scholar with Distinction"
-    ],
-    description:
-      "Graduated with high honors with focus on advanced computer science principles, calculus, and foundational engineering."
-  }
-];
-
-export const experienceList: ExperienceItem[] = [
-  {
-    company: "Bearcat Coders @ Hughes STEM High School",
-    title: "Volunteer Teaching Assistant",
-    location: "Cincinnati, OH",
-    period: "Sept. 2025 – Nov. 2025",
-    bullets: [
-      "Volunteered as a Teaching Assistant for a college-level introductory IT course at Hughes STEM High School.",
-      "Mentored high school students individually to bridge knowledge gaps and ensure alignment with course material.",
-      "Assisted the primary instructor with administrative duties including grading assignments and tracking student progress.",
-      "Led full teaching sessions and guided students through hands-on technical labs."
-    ]
-  },
-  {
-    company: "Baker College",
-    title: "Volunteer Developer & Instructor",
-    location: "Remote / On-site",
-    period: "July 2024 – Aug. 2024",
-    bullets: [
-      "Instructed introductory computer science students in Python programming, debugging, and software engineering principles.",
-      "Guided students through interactive coding exercises, data structure logic, and algorithmic problem-solving."
-    ]
-  },
-  {
-    company: "Microsoft & NUS ML Collaboration",
-    title: "Machine Learning Program Participant",
-    location: "Specialized Training",
-    period: "2024",
-    bullets: [
-      "Participated in a technical machine learning program with Microsoft and National University of Singapore (NUS).",
-      "Trained and benchmarked ML classification models on complex dataset metrics."
-    ],
-    projectUrl: "https://github.com/Harry20222",
-    projectUrlLabel: "View project repository on GitHub"
   }
 ];
 
@@ -275,41 +213,43 @@ export const extracurricularsList: ExtracurricularItem[] = [
   {
     title: "Bearcat Coders Outreach",
     organization: "Hughes STEM High School",
-    role: "Volunteer Mentor",
+    role: "Volunteer Teaching Assistant & Mentor",
+    location: "Cincinnati, OH",
     period: "Sept. 2025 – Nov. 2025",
     description:
-      "Mentored high school students in Cincinnati in introductory computer science and college-level IT concepts.",
+      "Volunteered as a Teaching Assistant for a college-level introductory IT course, mentoring Cincinnati high school students in computer science and IT concepts.",
     bullets: [
-      "Mentored students individually to bridge knowledge gaps.",
-      "Assisted classroom teacher with grading and technical labs."
+      "Mentored students individually to bridge knowledge gaps and align them with course material.",
+      "Assisted the primary instructor with grading assignments, tracking student progress, and technical labs.",
+      "Led teaching sessions and guided students through hands-on technical labs."
     ],
     iconName: "GraduationCap"
   },
   {
-    title: "MakeUC Hackathon",
-    organization: "ACM @ University of Cincinnati",
-    role: "Competitor & Team Captain",
-    period: "Nov. 2025",
-    description:
-      "Competed in the annual 24-hour hackathon, directing a team of 4 software engineering students to build an educational video platform.",
+    title: "Volunteer Developer & Instructor",
+    organization: "Baker College",
+    role: "Volunteer Developer & Instructor",
+    location: "Remote / On-site",
+    period: "July 2024 – Aug. 2024",
     bullets: [
-      "Led team in rapid prototyping and API integration.",
-      "Presented backend pipeline to panel of judges."
+      "Instructed introductory computer science students in Python programming, debugging, and software engineering principles.",
+      "Guided students through interactive coding exercises, data structure logic, and algorithmic problem-solving."
     ],
     iconName: "Code"
   },
   {
-    title: "UC CS Peer Community",
-    organization: "University of Cincinnati",
-    role: "Peer Collaborator",
-    period: "2025 – Present",
-    description:
-      "Engaged in computer science study groups, technical workshops, and open-source software collaboration across campus.",
+    title: "Machine Learning Program Participant",
+    organization: "Microsoft & NUS ML Collaboration",
+    role: "Machine Learning Program Participant",
+    location: "Specialized Training",
+    period: "2024",
     bullets: [
-      "Participate in technical workshops on web dev and machine learning.",
-      "Collaborate on open-source projects with fellow engineering students."
+      "Participated in a technical machine learning program with Microsoft and National University of Singapore (NUS).",
+      "Trained and benchmarked ML classification models on complex dataset metrics."
     ],
-    iconName: "Compass"
+    iconName: "Code",
+    projectUrl: "https://github.com/Harry20222",
+    projectUrlLabel: "View project repository on GitHub"
   }
 ];
 

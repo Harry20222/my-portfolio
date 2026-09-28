@@ -5,26 +5,22 @@ import { projectsData } from '@/data/portfolioData';
 
 export default function ProjectsGrid() {
   return (
-    <section id="projects" className="py-20 bg-[#f0f6ff] border-b border-neutral-200">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="mb-10 text-center sm:text-left">
+    <section id="projects" className="py-20 bg-white border-b border-neutral-200">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6">
+        <div className="mb-12">
           <h2 className="font-mono text-3xl sm:text-4xl font-bold text-neutral-900 tracking-tight mb-2">
             Projects
           </h2>
-          <p className="font-serif text-sm text-neutral-500 italic">
-            Click on any project to learn more
-          </p>
-          <div className="w-16 h-0.5 bg-neutral-800 mt-3 mx-auto sm:mx-0" />
+          <div className="w-16 h-0.5 bg-neutral-800" />
         </div>
 
-        {/* Replaced CSS Grid with a explicit flex/wrap gap layout */}
-        <div className="flex flex-wrap -mx-4">
+        <div className="relative border-l-2 border-neutral-300 ml-3 sm:ml-6 pl-6 sm:pl-10 space-y-8">
           {projectsData.map((project, index) => (
-            <div key={index} className="w-full md:w-1/2 lg:w-1/3 px-4">
-              <ProjectCard project={project} />
+            <div key={project.title} className="relative">
+              <div className="absolute -left-[31px] sm:-left-[47px] top-1.5 w-3.5 h-3.5 rounded-full bg-neutral-800 border-2 border-white shadow-sm" />
+              <ProjectCard project={project} index={index} />
             </div>
           ))}
-          <div className="flex flex-col gap-y-8"></div>
         </div>
       </div>
     </section>

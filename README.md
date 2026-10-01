@@ -1,8 +1,8 @@
 # Harry Bosco Denis | Portfolio
 
-A modern personal portfolio website built with Next.js, TypeScript, Tailwind CSS, and Framer Motion. This project showcases Harry Bosco Denis's background, projects, skills, extracurricular involvement, and contact information in a polished, responsive single-page experience.
+A  personal portfolio website built with Next.js, TypeScript, Tailwind CSS, and Framer Motion. This project showcases my background, projects, skills, extracurricular involvement, and contact information in a polished, responsive single-page experience.
 
-Live site: https://harryboscodenis.com
+Live site: https://harryboscodenis.com](https://my-portfolio-five-wine-82.vercel.app/
 
 ## Overview
 
@@ -14,17 +14,6 @@ This portfolio is designed to highlight:
 - leadership and community involvement
 - direct contact opportunities through a working form
 
-The site is structured as a clean, dark-and-light editorial portfolio with strong typography, motion effects, and a modular content system for easy maintenance.
-
-## Features
-
-- Responsive, mobile-friendly portfolio layout
-- Hero section and bio details for a personal brand overview
-- Project showcase cards with technology stacks and outcomes
-- Skills sections grouped by category
-- Activities and leadership timeline
-- Contact form integrated with Formspree
-- Centralized portfolio data for easy updates in one location
 
 ## Tech Stack
 
@@ -33,7 +22,7 @@ The site is structured as a clean, dark-and-light editorial portfolio with stron
 - TypeScript
 - Tailwind CSS
 - Framer Motion
-- Lucide React
+- Vercel
 - Formspree
 
 ## Project Structure

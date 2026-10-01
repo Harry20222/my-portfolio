@@ -103,9 +103,6 @@ export default function Hero() {
               About Me
             </h2>
             <p className="font-serif text-base sm:text-lg text-neutral-700 leading-relaxed">
-              I build AI-powered, backend-facing tools that turn messy real-world data into concrete user value, from medical-bill understanding to ECG classification and hackathon-grade product pipelines.
-            </p>
-            <p className="font-serif text-base sm:text-lg text-neutral-700 leading-relaxed">
               {personalBio.bioParagraph1}
             </p>
             <p className="font-serif text-base sm:text-lg text-neutral-700 leading-relaxed">

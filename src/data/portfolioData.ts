@@ -76,14 +76,14 @@ export const personalBio: PersonalBio = {
   pronouns: "He/Him/His",
   title: "Student, Developer, and Problem Solver",
   university: "University of Cincinnati",
-  year: "Sophomore (Class of 2029)",
+  year: "Class of 2029",
   major: "Computer Science",
   coopAvailability: "Spring 2027",
   gpa: 3.93,
   bioParagraph1:
-    "I am a Computer Science student at the University of Cincinnati pursuing a Bachelor of Science degree with a 3.93 GPA. I have been studying computer science and software development passionately, with experience coding in Python, Java, C++, HTML, CSS, JavaScript, React, Next.js, FastAPI, and TensorFlow. When I am not in classes, I am often developing software projects, conducting technical research, or building AI applications.",
+    "I am a Computer Science student at the University of Cincinnati pursuing a Bachelor of Science degree with a 3.93 GPA. Through my projects and coursework, I have gained experience coding in Python, Java, C++, HTML, CSS, JavaScript, React, Next.js, FastAPI, and TensorFlow.",
   bioParagraph2:
-    "I have worked on a variety of software engineering projects including AI medical bill negotiation tools, native Android heart arrhythmia classification apps, and scalable web backend pipelines. I have also been a volunteer teaching assistant for introductory IT courses at Hughes STEM High School, served as Secretary for the AAEIO student organization, and collaborated on ML programs with Microsoft & NUS.",
+    "I have worked on a variety of software engineering projects including AI medical bill negotiation tools, native Android heart arrhythmia classification apps, and scalable web backend pipelines. I have also been working as a Desk Assistant for University of Cincinnati Housing, serving as Secretary for the AAEIO student organization, and collaborated on ML programs with Microsoft & NUS.",
   resumeUrl: "https://drive.google.com/open?id=1yCHs_BdM7G5E-bM6fg5TT90wzfrPN569"
 };
 
@@ -105,22 +105,19 @@ export const educationList: Education[] = [
     minorOrSpecialization: "Artificial Intelligence & Software Systems",
     gpa: 3.93,
     coursework: [
-      "Data Structures & Algorithms",
-      "Linear Algebra & Differential Equations",
-      "Computer Systems Engineering",
-      "Software Engineering",
-      "Database Systems & MySQL",
-      "Discrete Mathematics",
-      "Physics Kinematics & Mechanics"
+      "Discrete Structures",
+      "Probability & Statistics",
+      "Data Structures",
+      "Linear Algebra"
     ],
     awardsAndScholarships: [
-      "Dean's List (First Semester 4.0 GPA)",
-      "AP Scholar Award",
+      "Dean's List",
       "International Outreach Award",
-      "UC Global Scholarship"
+      "UC Global Scholarship",
+      "AP Scholar Award"
     ],
     description:
-      "Pursuing a BS in Computer Science with a 3.93 cumulative GPA, engaged in software engineering coursework, competitive hackathons, and student leadership."
+      "Pursuing a B.S. in Computer Science with a 3.93 cumulative GPA, engaged in software engineering coursework, hackathons, and student leadership."
   }
 ];
 
@@ -139,7 +136,8 @@ export const projectsData: Project[] = [
       "Processed scrubbed OCR text through LLM pipeline to maintain strict patient data privacy.",
       "Contributed to React frontend logic to streamline data flow across the multimodal system."
     ],
-    githubUrl: "https://github.com/Harry20222",
+    devpostUrl: "https://devpost.com/software/bills-simplified",
+    githubUrl: "https://github.com/kingsiddhu/Billify",
     iconName: "FileText"
   },
   {
@@ -156,7 +154,7 @@ export const projectsData: Project[] = [
       "Simulated live ECG data streaming for mobile demonstration without external hardware dependencies.",
       "Authored a technical report documenting problem framing, model architecture, and evaluation benchmarks."
     ],
-    githubUrl: "https://github.com/Harry20222",
+    githubUrl: "https://github.com/Harry20222/H4H-Hackathon",
     iconName: "Activity"
   },
   {
@@ -173,8 +171,8 @@ export const projectsData: Project[] = [
       "Utilized Gemini API to filter videos into a curated dataset of 1,800+ educational shorts.",
       "Led a 4-person engineering team for UI creation and platform deployment."
     ],
-    devpostUrl: "https://devpost.com/Harry20222?ref_content=user-portfolio&ref_feature=portfolio&ref_medium=global-nav",
-    githubUrl: "https://github.com/Harry20222",
+    devpostUrl: "https://devpost.com/software/hass-doom-scrolling-with-a-purpose",
+    githubUrl: "https://github.com/ssaxena2007/HASS",
     iconName: "Video"
   },
   {
@@ -190,23 +188,37 @@ export const projectsData: Project[] = [
       "Implemented features for users to extend sessions and automated background purging of expired entities.",
       "Designed an administrative control panel in Tkinter GUI for monitoring live occupancy and database logs."
     ],
-    githubUrl: "https://github.com/Harry20222",
+    githubUrl: "https://github.com/Harry20222/Parking-System-UI",
     iconName: "Database"
   }
 ];
 
 export const extracurricularsList: ExtracurricularItem[] = [
+    {
+    title: "Part-time",
+    organization: "UC Housing",
+    role: "Desk Assistant",
+    period: "May 2026 – Present",
+    description:
+      "",
+    bullets: [
+      "Served as the primary point of contact for residents, visitors, staff, and guests approaching the service desk",
+      "Logged and distributed incoming packages and mail items using central housing database management tools",
+      "Managed administrative operations, scheduling equipment checkouts, and submitting maintenance work orders"
+    ],
+    iconName: "Users"
+  },
   {
     title: "Club Secretary",
-    organization: "AAEIO Student Organization",
+    organization: "AAEIO-UC",
     role: "Secretary & Executive Board Member",
     period: "May 2026 – Present",
     description:
-      "Direct outreach for the student club focusing on recruiting incoming freshmen. Document Executive Board meetings and manage digital records and event logistics for General Body Meetings.",
+      "",
     bullets: [
-      "Directed outreach initiatives for incoming freshmen.",
-      "Documented Executive Board meeting minutes and organizational records.",
-      "Coordinated logistics and event planning for upcoming General Body Meetings."
+      "Directed outreach for the club, focusing on recruiting upcoming freshmen",
+      "Documented Executive Board meetings and managed a digital repository for organizational records",
+      "Coordinated logistics and event planning for Fall semester General Body Meetings"
     ],
     iconName: "Users"
   },
@@ -217,7 +229,7 @@ export const extracurricularsList: ExtracurricularItem[] = [
     location: "Cincinnati, OH",
     period: "Sept. 2025 – Nov. 2025",
     description:
-      "Volunteered as a Teaching Assistant for a college-level introductory IT course, mentoring Cincinnati high school students in computer science and IT concepts.",
+      "",
     bullets: [
       "Mentored students individually to bridge knowledge gaps and align them with course material.",
       "Assisted the primary instructor with grading assignments, tracking student progress, and technical labs.",
@@ -248,7 +260,7 @@ export const extracurricularsList: ExtracurricularItem[] = [
       "Trained and benchmarked ML classification models on complex dataset metrics."
     ],
     iconName: "Code",
-    projectUrl: "https://github.com/Harry20222",
+    projectUrl: "https://github.com/Harry20222/MBTI-Personality-Prediction",
     projectUrlLabel: "View project repository on GitHub"
   }
 ];
@@ -257,10 +269,10 @@ export const skillCategories: SkillCategory[] = [
   {
     category: "Languages",
     skills: [
-      { name: "Python", highlight: true },
-      { name: "Java", highlight: true },
+      { name: "Python"},
+      { name: "Java"},
       { name: "C++" },
-      { name: "SQL / MySQL", highlight: true },
+      { name: "SQL / MySQL"},
       { name: "MongoDB" },
       { name: "JavaScript" },
       { name: "HTML & CSS" },
@@ -270,8 +282,8 @@ export const skillCategories: SkillCategory[] = [
   {
     category: "AI & Machine Learning",
     skills: [
-      { name: "TensorFlow", highlight: true },
-      { name: "Gemini API", highlight: true },
+      { name: "TensorFlow"},
+      { name: "Gemini API"},
       { name: "CNNs & ECG Classification" },
       { name: "Data Pipeline Engineering" }
     ]
@@ -279,9 +291,9 @@ export const skillCategories: SkillCategory[] = [
   {
     category: "Frameworks & Libraries",
     skills: [
-      { name: "FastAPI", highlight: true },
-      { name: "React", highlight: true },
-      { name: "Next.js", highlight: true },
+      { name: "FastAPI"},
+      { name: "React"},
+      { name: "Next.js"},
       { name: "Tkinter" },
       { name: "Tailwind CSS" },
       { name: "REST APIs" }
@@ -290,8 +302,8 @@ export const skillCategories: SkillCategory[] = [
   {
     category: "Developer Tools",
     skills: [
-      { name: "Git & GitHub", highlight: true },
-      { name: "Android Studio", highlight: true },
+      { name: "Git & GitHub"},
+      { name: "Android Studio"},
       { name: "VS Code" },
       { name: "Oracle VirtualBox" }
     ]

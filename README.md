@@ -2,7 +2,7 @@
 
 A  personal portfolio website built with Next.js, TypeScript, Tailwind CSS, and Framer Motion. This project showcases my background, projects, skills, extracurricular involvement, and contact information in a polished, responsive single-page experience.
 
-Live site: https://harryboscodenis.com](https://my-portfolio-five-wine-82.vercel.app/
+Live site: https://my-portfolio-five-wine-82.vercel.app/
 
 ## Overview
 

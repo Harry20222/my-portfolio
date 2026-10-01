@@ -123,6 +123,22 @@ export const educationList: Education[] = [
 
 export const projectsData: Project[] = [
   {
+    title: "My-Portfolio",
+    subtitle: "A very 'personal' website",
+    timeframe: "August 2026 - October 2026",
+    tags: ["Front-end", "Deployment"],
+    techStack: ["Next.js", "TypeScript", "React", "Vercel"],
+    description:
+      "A personal portfolio website built with Next.js, TypeScript, Tailwind CSS, and Framer Motion. This project showcases my background, projects, skills, extracurricular involvement, and contact information in a polished, responsive single-page experience.",
+    bullets: [
+      "Built a portfolio website with Next.js, and TypeScript, to showcase projects, skills, and experience",
+      "Developed a React-based frontend with modular components and centralized content data to streamline updates",
+      "Deployed a production-ready web app on Vercel, with a clean contact me section using formspree"
+    ],
+    githubUrl: "https://github.com/Harry20222/my-portfolio",
+    iconName: "FileText"
+  },
+  {
     title: "Billify",
     subtitle: "AI Medical Bill Translator & Negotiation Assistant",
     timeframe: "March 2026",
@@ -161,7 +177,7 @@ export const projectsData: Project[] = [
     title: "Educational Shorts Platform",
     subtitle: "MAKE UC Hackathon Backend & Data Pipeline",
     timeframe: "Nov. 2025",
-    tags: ["Hackathon Winner", "Backend Systems", "Data Scraper"],
+    tags: ["Backend Systems", "Data Scraper"],
     techStack: ["Python", "FastAPI", "Gemini AI", "YouTube Data API"],
     description:
       "Backend architecture and automated data scraper built for MAKE UC Hackathon that curated 1,800+ educational CS shorts.",

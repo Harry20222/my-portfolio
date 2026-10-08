@@ -106,7 +106,7 @@ export default function Contact() {
                 <CheckCircle2 className="w-12 h-12 text-emerald-600 mx-auto" />
                 <h3 className="font-mono text-xl font-bold text-neutral-900">Message Sent!</h3>
                 <p className="font-serif text-sm text-neutral-600">
-                  Thanks for reaching out. I'll get back to you as soon as possible.
+                  Thanks for reaching out. I&apos;ll get back to you as soon as possible.
                 </p>
                 <button
                   onClick={() => setSubmitted(false)}
@@ -122,7 +122,7 @@ export default function Contact() {
                 </div>
                 <h3 className="font-mono text-xl font-bold text-neutral-900">Something went wrong</h3>
                 <p className="font-serif text-sm text-neutral-600">
-                  The form couldn't be submitted right now. Please try again or reach out directly by email.
+                  The form couldn&apos;t be submitted right now. Please try again or reach out directly by email.
                 </p>
                 <button
                   onClick={() => setSubmitError(false)}

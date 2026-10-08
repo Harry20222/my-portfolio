@@ -96,6 +96,8 @@ Typical Vercel deployment steps:
 
 ## Content Maintenance
 
+The cinematic intro plays a local 5.8-second Death Stranding clip at `public/videos/death-stranding-bt-intro.mp4`, showing a BT consuming a porter and the scene washing white. It plays once per tab session, reveals the homepage automatically, and bypasses for reduced motion or playback failure. See [the footage notes](public/videos/README.md) for source, editing, export, timing, and preview instructions.
+
 Portfolio content is centralized in `src/data/portfolioData.ts`, making it easy to update:
 
 - personal bio

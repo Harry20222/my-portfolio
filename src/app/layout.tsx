@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import CinematicIntro from '@/components/CinematicIntro';
 import './globals.css';
 
 const siteUrl = 'https://harryboscodenis.com';
@@ -46,7 +47,16 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className="bg-white text-[#2f2f2f] antialiased">
-        {children}
+        <CinematicIntro>{children}</CinematicIntro>
+        <noscript>
+          <style>{`
+            .portfolio-content [style*="opacity:0"],
+            .portfolio-content [style*="opacity: 0"] {
+              opacity: 1 !important;
+              transform: none !important;
+            }
+          `}</style>
+        </noscript>
       </body>
     </html>
   );

@@ -132,8 +132,7 @@ export const projectsData: Project[] = [
       "A personal portfolio website built with Next.js, TypeScript, Tailwind CSS, and Framer Motion. This project showcases my background, projects, skills, extracurricular involvement, and contact information in a polished, responsive single-page experience.",
     bullets: [
       "Built a portfolio website with Next.js, and TypeScript, to showcase projects, skills, and experience",
-      "Developed a React-based frontend with modular components and centralized content data to streamline updates",
-      "Deployed a production-ready web app on Vercel, with a clean contact me section using formspree"
+      "Developed a React-based frontend with modular components and centralized content data to streamline updates"
     ],
     githubUrl: "https://github.com/Harry20222/my-portfolio",
     iconName: "FileText"

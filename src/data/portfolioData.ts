@@ -123,6 +123,22 @@ export const educationList: Education[] = [
 
 export const projectsData: Project[] = [
   {
+    title: "StarMap",
+    subtitle: "Interactive, accurate, and 'stellar' way to visualize the sky",
+    timeframe: "October 2026 - November 2026",
+    tags: ["Full-stack", "Deployment"],
+    techStack: ["Python", "Astropy", "Next.js", "TypeScript", "React", "Vercel"],
+    description:
+      "A Full-stack project built with Python, Astropy, React, and Typescript. This website shows a starmap captured by JWST, which you can interact with to visualize the astronomic distances between galaxies",
+    bullets: [
+      "Used high-confidence spectroscopic redshifts to estimate distances for 43 galaxies and precomputed all 903 pair comparisons in Python.",
+      "Built Inspect and Compare modes with mouse, touch, and keyboard controls, plus explanations of astronomy terms directly on the map.",
+      "Deployed a production-ready web app on Vercel, with a clean contact me section using formspree"
+    ],
+    githubUrl: "https://github.com/Harry20222/StarMap",
+    iconName: "FileText"
+  },
+  {
     title: "My-Portfolio",
     subtitle: "A very 'personal' website",
     timeframe: "August 2026 - October 2026",

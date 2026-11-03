@@ -66,6 +66,18 @@ export default function ProjectCard({
             </a>
           )}
 
+          {project.websiteUrl && (
+            <a
+              href={project.websiteUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 text-neutral-900 hover:text-neutral-600 transition-colors"
+            >
+              <span>View website</span>
+              <ExternalLink className="w-3 h-3" />
+            </a>
+          )}
+
           {project.devpostUrl && (
             <a
               href={project.devpostUrl}

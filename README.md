@@ -106,6 +106,8 @@ Portfolio content is centralized in `src/data/portfolioData.ts`, making it easy 
 
 This reduces the need to edit multiple components when updating profile information.
 
+To show a live project website, add an optional `websiteUrl` to that project's entry in `projectsData`. The project card displays a "View website" link with the same styling as repository links.
+
 ## Contact
 
 For inquiries, collaborations, or opportunities:

@@ -52,6 +52,7 @@ export interface Project {
   description: string;
   bullets: string[];
   githubUrl?: string;
+  websiteUrl?: string;
   devpostUrl?: string;
   demoUrl?: string;
   iconName?: string;
@@ -135,6 +136,7 @@ export const projectsData: Project[] = [
       "Built Inspect and Compare modes with mouse, touch, and keyboard controls, plus explanations of astronomy terms directly on the map."
     ],
     githubUrl: "https://github.com/Harry20222/StarMap",
+    websiteUrl: "https://starmap-rkdg.vercel.app/",
     iconName: "FileText"
   },
   {

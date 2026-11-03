@@ -123,6 +123,21 @@ export const educationList: Education[] = [
 
 export const projectsData: Project[] = [
   {
+    title: "StarMap",
+    subtitle: "Interactive, accurate, and 'stellar' way to visualize the sky",
+    timeframe: "October 2026 - November 2026",
+    tags: ["Full-stack", "Deployment"],
+    techStack: ["Python", "Astropy", "Next.js", "TypeScript", "React", "Vercel"],
+    description:
+      "A Full-stack project built with Python, Astropy, React, and Typescript. This website shows a starmap captured by JWST, which you can interact with to visualize the astronomic distances between galaxies",
+    bullets: [
+      "Used high-confidence spectroscopic redshifts to estimate distances for 43 galaxies and precomputed all 903 pair comparisons in Python.",
+      "Built Inspect and Compare modes with mouse, touch, and keyboard controls, plus explanations of astronomy terms directly on the map."
+    ],
+    githubUrl: "https://github.com/Harry20222/StarMap",
+    iconName: "FileText"
+  },
+  {
     title: "My-Portfolio",
     subtitle: "A very 'personal' website",
     timeframe: "August 2026 - October 2026",
@@ -132,7 +147,8 @@ export const projectsData: Project[] = [
       "A personal portfolio website built with Next.js, TypeScript, Tailwind CSS, and Framer Motion. This project showcases my background, projects, skills, extracurricular involvement, and contact information in a polished, responsive single-page experience.",
     bullets: [
       "Built a portfolio website with Next.js, and TypeScript, to showcase projects, skills, and experience",
-      "Developed a React-based frontend with modular components and centralized content data to streamline updates"
+      "Developed a React-based frontend with modular components and centralized content data to streamline updates",
+      "Deployed a production-ready web app on Vercel, with a clean contact me section using formspree"
     ],
     githubUrl: "https://github.com/Harry20222/my-portfolio",
     iconName: "FileText"

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { Analytics } from '@vercel/analytics/next';
 import './globals.css';
 
 const siteUrl = 'https://harryboscodenis.com';
@@ -47,6 +48,7 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <body className="bg-white text-[#2f2f2f] antialiased">
         {children}
+        <Analytics />
       </body>
     </html>
   );

@@ -124,6 +124,23 @@ export const educationList: Education[] = [
 
 export const projectsData: Project[] = [
   {
+    title: "PATH",
+    subtitle: "Planetary Analog Terrain & Hub",
+    timeframe: "November 2026",
+    tags: ["Full-stack", "Deployment", "NASA Space Apps"],
+    techStack: ["Python", "JavaScript", "HTML", "CSS", "Vercel"],
+    description:
+      "I developed a website which gives you a 2D map of the Moon and Mars with potential future base sites marked. Once a site is selected you will get all the technical information about the site along with several Earth Analogs for different testing purposes",
+    bullets: [
+      "Built a reproducible data pipeline using NASA, USGS, and Mars Climate Database sources sources to process terrain, water-ice, temperature, and solar-exposure evidence for Moon and Mars base site",
+      "Curated a catalog of 188 Earth sites to act as Analogs for Moon and Mars base testing",
+      "Implemented an 'Ask and Agent' feature which generates mission-specific AI prompts and downloadable evidence packages containing site data"
+    ],
+    githubUrl: "https://github.com/Harry20222/StarMap",
+    websiteUrl: "https://path-beige.vercel.app/",
+    iconName: "FileText"
+  },
+  {
     title: "StarMap",
     subtitle: "Interactive, accurate, and 'stellar' way to visualize the sky",
     timeframe: "October 2026 - November 2026",

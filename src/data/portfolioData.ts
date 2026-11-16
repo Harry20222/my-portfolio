@@ -136,7 +136,7 @@ export const projectsData: Project[] = [
       "Curated a catalog of 188 Earth sites to act as Analogs for Moon and Mars base testing",
       "Implemented an 'Ask and Agent' feature which generates mission-specific AI prompts and downloadable evidence packages containing site data"
     ],
-    githubUrl: "https://github.com/Harry20222/StarMap",
+    githubUrl: "https://github.com/Harry20222/PATH-PlanetaryAnalogTerrainHub",
     websiteUrl: "https://path-beige.vercel.app/",
     iconName: "FileText"
   },
